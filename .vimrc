@@ -34,8 +34,8 @@ set shiftwidth=4
 set softtabstop=4
 
 " Map Numpad5 (NumLock disabled) to turn normal mode on for
-"" insert and replace modes (this combination does not move cursor unlike <Esc>):
-:imap ^[OG <C-\><C-N>
+"" insert and replace modes:
+:imap ^[OG <Esc>
 "" visual and select modes:
 :vmap ^[OG <Esc>
 "" command-line mode:
