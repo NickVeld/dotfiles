@@ -25,6 +25,7 @@ endif
 "    autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "endif
 
+
 " Prevents useless indent on new lines
 set noautoindent
 
@@ -32,6 +33,19 @@ set noautoindent
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+
+
+set number
+
+" https://github.com/jeffkreeftmeijer/vim-numbertoggle/blob/2.1.2/plugin/number_toggle.vim
+if has("autocmd")
+    augroup numbertoogle
+        autocmd!
+        autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+        autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+    augroup END
+endif
+   
 
 " Map Numpad5 (NumLock disabled) to turn normal mode on for
 "" insert and replace modes:
